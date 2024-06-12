@@ -2,7 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+.dark {
+  /*
+  --background: 09, 09, 0b;
+  */
+  --background: 17, 17, 19;
+  --iris-text: 169, 169, 255;
+  --iris-text-2: 225, 224, 255;
+  background: rgba(var(--background));
+}
+
+.light {
+  --background: 245, 245, 245;
+  background: rgba(var(--background));
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: 09, 09, 11;
+    background: rgba(var(--background));
+  }
+}
+
+/*:root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -25,3 +47,4 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+*/
