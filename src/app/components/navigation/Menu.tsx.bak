@@ -1,0 +1,57 @@
+import { useState } from 'react';
+const Menu = () => {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className='border-0 border-green-500 flex py-2 2xl:ml-64 md:ml-7'>
+      <div className='border-0 text-xl -mt-[6px] text-iris-text'>
+        [chartify]
+      </div>
+
+      <div
+        onMouseEnter={() => setOpen(true)}
+        onMouseLeave={() => setOpen(false)}
+        className='relative h-fit w-fit'
+      >
+        <button className='relative ml-11 px-2 rounded-md text-slate-300 hover:text-iris-text hover:bg-slate-700'>
+          Item1
+          <span
+            style={{ transform: open ? 'scaleX(0.5)' : 'scaleX(1)' }}
+            className='absolute -bottom-2 -left-0 -right-0 h-1 origin-left rounded-full bg-indigo-300 transition-transform duration-300 ease-out'
+          />
+        </button>
+      </div>
+      <button className='border-1 px-2 rounded-md text-slate-300 hover:text-iris-text-2 hover:bg-slate-700'>
+        Item2
+      </button>
+      <button className='border-1 px-2 rounded-md text-slate-300 hover:text-white hover:bg-slate-700'>
+        Item3
+      </button>
+      <button className='border-1 px-2 rounded-md text-slate-300 hover:text-white hover:bg-slate-700'>
+        Item4
+      </button>
+      <button className='border-1 px-2 rounded-md text-slate-300 hover:text-white hover:bg-slate-700'>
+        Item5
+      </button>
+    </div>
+  );
+};
+
+const NAVBAR = [
+  {
+    title: 'item1',
+  },
+  {
+    title: 'item2',
+  },
+  {
+    title: 'item3',
+  },
+  {
+    title: 'item4',
+  },
+  {
+    title: 'Item5',
+  },
+].map((n, idx) => ({ ...n, id: idx + 1 }));
+
+export default Menu;
